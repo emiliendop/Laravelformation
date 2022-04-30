@@ -9,7 +9,8 @@
     @else 
          <span>Aucun post en base</span>
     @endif
-    <h2>Liste des videos</h2>
+    <u>
+    <h2>Liste des videos</h2></u>
     @forelse($video->comments as $comment)
             <div style="color:green">
                 {{$comment->text}} | cree en {{$comment->created_at->format('Y')}}
