@@ -6,7 +6,7 @@
     <hr>
         @forelse($post->comments as $comment)
             <div style="color:green">
-                {{$comment->content}} | cree en {{$comment->created_at->format('Y')}}
+                {{$comment->text}} | cree en {{$comment->created_at->format('Y')}}
             </div>
         @empty
            <span style="color:red">Aucun commentaire pour ce post</span>
@@ -16,6 +16,6 @@
         <span style="color:green">{{$tag->name}}</span>
         @empty 
         <span style="color:red">Aucun tag pour ce post</span>
-        
+      
     @endforelse    
     @endsection
