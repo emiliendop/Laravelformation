@@ -4,6 +4,9 @@
     <h1>{{$post->content}}</h1>
     <span>{{ $post->image ? $post->image->path: "pas d'image" }}</span>
     <hr>
+    <span> Nom de lartiste de l'image:{{ $post->imageArtist->name}}</span>  
+
+    <hr>
         @forelse($post->comments as $comment)
             <div style="color:green">
                 {{$comment->text}} | cree en {{$comment->created_at->format('Y')}}
@@ -17,5 +20,7 @@
         @empty 
         <span style="color:red">Aucun tag pour ce post</span>
       
-    @endforelse    
+    @endforelse 
+     <span>le dernier commentaire est:{{$post->latestcomment->text}}</span>
+     <span>le dernier commentaire est:{{$post->oldestcomment->text}}</span>
     @endsection
