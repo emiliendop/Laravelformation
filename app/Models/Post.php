@@ -37,5 +37,13 @@ class Post extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
-   
+
+   public function latestcomment()
+    {
+        return $this->hasOne(Comment::class)->lastestOfMany();
+    }
+    public function oldestcomment()
+    {
+        return $this->hasOne(Comment::class)->oldestOfMany();
+    }
 }

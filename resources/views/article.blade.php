@@ -21,5 +21,6 @@
         <span style="color:red">Aucun tag pour ce post</span>
       
     @endforelse 
-     
+     <span>le dernier commentaire est:{{$post->latestcomment->text}}</span>
+     <span>le dernier commentaire est:{{$post->oldestcomment->text}}</span>
     @endsection
