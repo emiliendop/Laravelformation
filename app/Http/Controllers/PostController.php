@@ -66,7 +66,7 @@ class PostController extends Controller
             //    $post->title = $request->title ; //1-colonne bd 2-name form pas la peine modele
             //    $post->content = $request->content ;
             //    $post->save() ;
-            dd($request->query('code', 'Helen'));
+            // dd($request->query('code', 'Helen'));
 
         Post::create([
             'title' => $request->title ,
