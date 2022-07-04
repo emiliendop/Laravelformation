@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Video;
 use App\Models\Comment;
+use App\Rules\Uppercase;
 use Illuminate\Http\Request;
 
 
@@ -67,7 +68,11 @@ class PostController extends Controller
             //    $post->content = $request->content ;
             //    $post->save() ;
             // dd($request->query('code', 'Helen'));
-
+            
+        $request->validate([
+            'title'=>['required','max:255','min:4','unique:posts',new Uppercase],
+            'content' => ['required']
+        ]);
         Post::create([
             'title' => $request->title ,
              'content' => $request->content 
