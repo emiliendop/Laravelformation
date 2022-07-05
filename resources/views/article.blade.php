@@ -2,9 +2,10 @@
     @section('content')
     
     <h1>{{$post->content}}</h1>
-    <span>{{ $post->image ? $post->image->path: "pas d'image" }}</span>
+    <!-- <span>{{ $post->image ? $post->image->path: "pas d'image" }}</span> -->
+    <img src= "{{ Storage::url($post->image->path)}}" alt="">
     <hr>
-    <span> Nom de lartiste de l'image:{{ $post->imageArtist->name}}</span>  
+   
 
     <hr>
         @forelse($post->comments as $comment)
@@ -21,6 +22,5 @@
         <span style="color:red">Aucun tag pour ce post</span>
       
     @endforelse 
-     <span>le dernier commentaire est:{{$post->latestcomment->text}}</span>
-     <span>le dernier commentaire est:{{$post->oldestcomment->text}}</span>
+     
     @endsection
